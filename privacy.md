@@ -1,4 +1,9 @@
-
+---
+# filepath: privacy.md (v CrocodilusCZ/shooting-companion-privacy)
+layout: default
+title: Zásady ochrany osobních údajů
+permalink: /privacy/ # URL, na které bude stránka dostupná (např. .../privacy/)
+---
 21. května 2025
 
 Vítejte v aplikaci Shooting Companion Lite (dále jen "Aplikace"). Tyto zásady ochrany soukromí vysvětlují, jaké informace shromažďujeme, jak je používáme a chráníme. Vývojářem aplikace je Aleš Kozubík (dále jen "my", "nás" nebo "naše").
