@@ -1,8 +1,7 @@
 ---
-# filepath: privacy.md (v CrocodilusCZ/shooting-companion-privacy)
 layout: default
 title: Zásady ochrany osobních údajů
-permalink: /privacy/ # URL, na které bude stránka dostupná (např. .../privacy/)
+permalink: /privacy.html # URL, na které bude stránka dostupná (např. .../privacy/)
 ---
 21. května 2025
 
@@ -58,5 +57,3 @@ Tyto zásady ochrany soukromí můžeme čas od času aktualizovat. O jakýchkol
 
 Máte-li jakékoli dotazy týkající se těchto zásad ochrany soukromí, kontaktujte nás na adrese:
 shooting.app.dev@gmail.com
-
----

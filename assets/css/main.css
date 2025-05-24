@@ -3869,10 +3869,10 @@ input, select, textarea {
 
 .video-container-shorts iframe {
     position: absolute;
-    top: 4.4%;
-    left: 10.5%;
-    width: 79%;
-    height: 91%;
+    top: 8%;
+    left: 9.5%;
+    width: 81%;
+    height: 83%;
     border: none;
     border-radius: 30px;
 }
