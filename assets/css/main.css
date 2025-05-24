@@ -3877,6 +3877,91 @@ input, select, textarea {
     border-radius: 30px;
 }
 
+/* FAQ Collapsible Styles - ÚPRAVA PRO LEPŠÍ VZHLED NA SVĚTLÉM POZADÍ (např. style5) */
+.collapsible-item {
+    margin-bottom: 1em;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    width: 100%; /* Přidáno pro jistotu */
+}
+
+.collapsible-trigger {
+    background-color: #f0f0f0; /* Světle šedé pozadí pro trigger */
+    color: #585858; /* Tmavší barva textu pro lepší kontrast */
+    cursor: pointer;
+    padding: 0.85em 1.25em; /* Mírně upravený padding */
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 0.95em; /* Mírně menší písmo */
+    font-weight: 700; /* Mírně tučnější */
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 4px; /* Zaoblení pro celý trigger, pokud není rozbaleno */
+}
+
+.collapsible-trigger.active {
+    background-color: #e8e8e8; /* Mírně tmavší pozadí pro aktivní trigger */
+    border-bottom-left-radius: 0; /* Odstranění zaoblení dole, když je rozbaleno */
+    border-bottom-right-radius: 0;
+}
+
+.collapsible-trigger:hover {
+    background-color: #e5e5e5;
+}
+
+/* Styl pro ikonu (šipku) */
+.collapsible-trigger::after {
+    content: '\002B'; /* Plus */
+    color: #585858; /* Barva ikony */
+    font-weight: bold;
+    float: right;
+    margin-left: 10px; /* Větší odsazení ikony */
+    transition: transform 0.2s ease-in-out;
+    font-size: 1.2em; /* Mírně větší ikona */
+    line-height: 1; /* Zajistí lepší vertikální zarovnání */
+}
+
+.collapsible-trigger.active::after {
+    content: "\2212"; /* Mínus */
+    /* transform: rotate(0deg);  Otočení není nutné pro +/- */
+}
+
+.collapsible-content {
+    padding: 0 1.25em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: #ffffff; /* Bílé pozadí pro obsah, pokud item má jiné */
+    border-top: 1px solid #e0e0e0; /* Oddělovač mezi triggerem a obsahem */
+    border-radius: 0 0 4px 4px;
+    color: #787878; /* Barva textu obsahu */
+    font-size: 0.9em; /* Mírně menší písmo obsahu */
+}
+
+.collapsible-content p {
+    margin-bottom: 1em;
+    padding-top: 1em;
+    line-height: 1.6; /* Mírně upravená výška řádku */
+}
+.collapsible-content p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
+
+.collapsible-content.active {
+    padding-top: 0.85em;
+    padding-bottom: 0.85em;
+}
+
+/* Úprava pro nadpisy H4 v FAQ, pokud je používáte */
+.wrapper.style5 .inner h4 {
+    color: #383838; /* Tmavší barva pro nadpisy sekcí FAQ */
+    margin-bottom: 0.75em; /* Menší mezera pod nadpisem sekce */
+    font-size: 1.1em;
+}
+
 
 /* Main */
 

@@ -12,6 +12,29 @@
 		$banner = $('#banner'),
 		$header = $('#header');
 
+		// FAQ Collapsible functionality
+var coll = document.getElementsByClassName("collapsible-trigger");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      // Počkejte na dokončení animace sbalení před odstraněním třídy active pro padding
+      setTimeout(function() {
+        if (!content.style.maxHeight) { // Zkontrolujte, zda je stále sbalený
+            content.classList.remove("active");
+        }
+      }, 300); // Čas by měl odpovídat délce transition v CSS
+    } else {
+      content.classList.add("active"); // Přidejte třídu pro padding ihned
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+
 	// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],
