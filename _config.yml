@@ -1,8 +1,0 @@
-# filepath: _config.yml (v CrocodilusCZ/shooting-companion-privacy)
-title: Shooting Companion Lite # Název vašeho webu/aplikace
-description: Váš digitální asistent pro přesnou analýzu terčů. # Krátký popis
-theme: jekyll-theme-minimal # Výchozí Jekyll šablona podporovaná GitHub Pages
-
-# Můžete přidat další globální proměnné, pokud je šablona podporuje
-# např. logo: /assets/images/app_logo_for_web.png
-# github_username: CrocodilusCZ
