@@ -12,28 +12,28 @@
 		$banner = $('#banner'),
 		$header = $('#header');
 
-		// FAQ Collapsible functionality
-var coll = document.getElementsByClassName("collapsible-trigger");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-      // Počkejte na dokončení animace sbalení před odstraněním třídy active pro padding
-      setTimeout(function() {
-        if (!content.style.maxHeight) { // Zkontrolujte, zda je stále sbalený
-            content.classList.remove("active");
-        }
-      }, 300); // Čas by měl odpovídat délce transition v CSS
-    } else {
-      content.classList.add("active"); // Přidejte třídu pro padding ihned
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
+		// FAQ accordions
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Zavři všechny ostatní otevřené položky (odkomentujte pokud potřebujete chování "pouze jedna položka rozbalená")
+            /*
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            */
+            
+            // Přepni aktivní stav kliknuté položky
+            item.classList.toggle('active');
+        });
+    });
+});
 
 	// Breakpoints.
 		breakpoints({

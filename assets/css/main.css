@@ -3877,90 +3877,270 @@ input, select, textarea {
     border-radius: 30px;
 }
 
-/* FAQ Collapsible Styles - ÚPRAVA PRO LEPŠÍ VZHLED NA SVĚTLÉM POZADÍ (např. style5) */
-.collapsible-item {
-    margin-bottom: 1em;
+/* === NOVÝ FAQ STYL === */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.faq-section {
+    margin-bottom: 2em;
+}
+
+.faq-section h4 {
+    color: #2E3842;
+    font-size: 1.2em;
+    margin: 1.5em 0 1em 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item {
+    margin-bottom: 0.75em;
     border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    width: 100%; /* Přidáno pro jistotu */
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
-.collapsible-trigger {
-    background-color: #f0f0f0; /* Světle šedé pozadí pro trigger */
-    color: #585858; /* Tmavší barva textu pro lepší kontrast */
+.faq-item:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    position: relative;
+    padding: 1.25em 3.5em 1.25em 1.25em;
     cursor: pointer;
-    padding: 0.85em 1.25em; /* Mírně upravený padding */
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.faq-question h5 {
+    margin: 0;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #3a3a3a;
+    transition: color 0.2s ease;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+}
+
+.faq-question:hover h5 {
+    color: #ed4933;
+}
+
+.faq-icon {
+    position: absolute;
+    right: 1.25em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.faq-icon:before, 
+.faq-icon:after {
+    content: '';
+    position: absolute;
+    background-color: #888;
+    transition: all 0.25s ease-out;
+}
+
+.faq-icon:before {
+    top: 50%;
+    left: 0;
     width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 0.95em; /* Mírně menší písmo */
-    font-weight: 700; /* Mírně tučnější */
-    transition: background-color 0.2s ease-in-out;
-    border-radius: 4px; /* Zaoblení pro celý trigger, pokud není rozbaleno */
+    height: 2px;
+    margin-top: -1px;
 }
 
-.collapsible-trigger.active {
-    background-color: #e8e8e8; /* Mírně tmavší pozadí pro aktivní trigger */
-    border-bottom-left-radius: 0; /* Odstranění zaoblení dole, když je rozbaleno */
-    border-bottom-right-radius: 0;
+.faq-icon:after {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
 }
 
-.collapsible-trigger:hover {
-    background-color: #e5e5e5;
+.faq-item.active .faq-icon:after {
+    transform: rotate(90deg);
+    opacity: 0;
 }
 
-/* Styl pro ikonu (šipku) */
-.collapsible-trigger::after {
-    content: '\002B'; /* Plus */
-    color: #585858; /* Barva ikony */
-    font-weight: bold;
-    float: right;
-    margin-left: 10px; /* Větší odsazení ikony */
-    transition: transform 0.2s ease-in-out;
-    font-size: 1.2em; /* Mírně větší ikona */
-    line-height: 1; /* Zajistí lepší vertikální zarovnání */
+.faq-item.active .faq-question h5 {
+    color: #ed4933;
 }
 
-.collapsible-trigger.active::after {
-    content: "\2212"; /* Mínus */
-    /* transform: rotate(0deg);  Otočení není nutné pro +/- */
-}
-
-.collapsible-content {
+.faq-answer {
     padding: 0 1.25em;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    background-color: #ffffff; /* Bílé pozadí pro obsah, pokud item má jiné */
-    border-top: 1px solid #e0e0e0; /* Oddělovač mezi triggerem a obsahem */
-    border-radius: 0 0 4px 4px;
-    color: #787878; /* Barva textu obsahu */
-    font-size: 0.9em; /* Mírně menší písmo obsahu */
+    transition: all 0.35s ease-out;
+    border-top: 0;
+    background-color: #f9f9f9;
 }
 
-.collapsible-content p {
+.faq-item.active .faq-answer {
+    padding: 1.25em;
+    max-height: 1000px;
+    border-top: 1px solid #eee;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+.faq-answer p:not(:last-child) {
     margin-bottom: 1em;
-    padding-top: 1em;
-    line-height: 1.6; /* Mírně upravená výška řádku */
-}
-.collapsible-content p:last-child {
-    margin-bottom: 0;
-    padding-bottom: 1em;
 }
 
-.collapsible-content.active {
-    padding-top: 0.85em;
-    padding-bottom: 0.85em;
+.faq-answer a {
+    color: #ed4933;
+    border-bottom: 1px dotted rgba(237, 73, 51, 0.5);
+    transition: all 0.2s ease;
 }
 
-/* Úprava pro nadpisy H4 v FAQ, pokud je používáte */
-.wrapper.style5 .inner h4 {
-    color: #383838; /* Tmavší barva pro nadpisy sekcí FAQ */
-    margin-bottom: 0.75em; /* Menší mezera pod nadpisem sekce */
+.faq-answer a:hover {
+    border-bottom-color: transparent;
+    color: #c83a26;
+}
+
+/* Responzivní úpravy */
+@media screen and (max-width: 736px) {
+    .faq-question {
+        padding: 1em 2.75em 1em 1em;
+    }
+    
+    .faq-question h5 {
+        font-size: 1em;
+        letter-spacing: 0.03em;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 1em;
+    }
+    
+    .faq-icon {
+        right: 1em;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .faq-container {
+        padding: 0 0.5em;
+    }
+    
+    .faq-question {
+        padding: 0.85em 2.5em 0.85em 0.85em;
+    }
+    
+    .faq-question h5 {
+        font-size: 0.95em;
+        letter-spacing: 0;
+    }
+}
+/* === KONEC NOVÉHO FAQ STYLU === */
+
+/* === CANNY BADGES === */
+.canny-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.canny-feature-links {
+    margin-top: 1em;
+}
+
+.canny-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8em 1.2em;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #fff;
+    text-decoration: none !important;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.2s ease;
+    margin: 0.25em;
+}
+
+.canny-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.canny-badge.bug {
+    background: rgba(237, 73, 51, 0.2);
+    border-color: rgba(237, 73, 51, 0.4);
+}
+
+.canny-badge.bug:hover {
+    background: rgba(237, 73, 51, 0.3);
+}
+
+.canny-badge.roadmap {
+    background: rgba(65, 105, 225, 0.2);
+    border-color: rgba(65, 105, 225, 0.4);
+}
+
+.canny-badge.roadmap:hover {
+    background: rgba(65, 105, 225, 0.3);
+}
+
+.badge-icon {
+    margin-right: 0.8em;
     font-size: 1.1em;
 }
+
+.canny-badge.large {
+    padding: 1em 1.5em;
+    font-size: 1.1em;
+}
+
+.canny-badge.small {
+    padding: 0.5em 0.8em;
+    font-size: 0.9em;
+}
+
+/* Pro světlé pozadí (např. v sekci features) */
+.features .canny-badge {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #4E4852;
+}
+
+.features .canny-badge:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.features .canny-badge.bug {
+    background: rgba(237, 73, 51, 0.1);
+    border-color: rgba(237, 73, 51, 0.2);
+    color: #c83a26;
+}
+
+.features .canny-badge.roadmap {
+    background: rgba(65, 105, 225, 0.1);
+    border-color: rgba(65, 105, 225, 0.2);
+    color: #4169e1;
+}
+/* === KONEC CANNY BADGES === */
+
+
 
 
 /* Main */
