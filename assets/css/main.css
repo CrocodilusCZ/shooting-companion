@@ -4364,3 +4364,74 @@ input, select, textarea {
 	0%,100% { transform: translateZ(0) scale(1); }
 	50% { transform: translateZ(0) scale(1.03); }
   }
+
+  /* menší text + bez uppercase */
+.launch-note{
+	margin:.25rem 0 .6rem;
+	font-size:.9rem;
+	font-weight:600;
+	letter-spacing:.02em;
+	color:#fff;
+	opacity:.85;
+	text-transform:none !important;
+  }
+  
+  .actions.store-badges a.store-badge{ display:inline-flex; align-items:center; height:56px; padding:0 !important; background:transparent !important; border:0 !important; text-decoration:none !important; box-shadow:none !important; }
+.actions.store-badges a.store-badge img{ height:100% !important; width:auto !important; display:block; }
+@media (max-width:736px){ .actions.store-badges a.store-badge{ height:48px; } }
+
+.launch-note{ margin:.25rem 0 .6rem; font-size:.9rem; font-weight:600; letter-spacing:.02em; color:#fff; opacity:.85; text-transform:none !important; }
+
+/* Learn More – výrazný skok s tlumenými doskoky a pauzou */
+#banner .more.scrolly{
+	display:inline-block;
+	transform-origin:center bottom;
+	animation: learnBounce 5s infinite;
+	will-change: transform;
+  }
+  #banner .more.scrolly:hover{ animation-play-state: paused; }
+  
+  @keyframes learnBounce{
+	0%  { transform: translateY(0);    animation-timing-function:cubic-bezier(.34,1.56,.64,1); }
+	4%  { transform: translateY(-16px);animation-timing-function:cubic-bezier(.22,.61,.36,1); }
+	8%  { transform: translateY(0);    animation-timing-function:cubic-bezier(.34,1.56,.64,1); }
+	12% { transform: translateY(-9px); animation-timing-function:cubic-bezier(.22,.61,.36,1); }
+	16% { transform: translateY(0);    animation-timing-function:cubic-bezier(.34,1.56,.64,1); }
+	19% { transform: translateY(-4px); animation-timing-function:cubic-bezier(.22,.61,.36,1); }
+	22% { transform: translateY(0); }
+	100%{ transform: translateY(0); } /* pauza do dalšího cyklu */
+  }
+  
+  @media (prefers-reduced-motion: reduce){
+	#banner .more.scrolly{ animation:none; }
+  }
+
+  /* Community – vzhled jako sekce "one" */
+#community.community-clean { background: transparent; }
+#community .community-actions {
+  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;
+}
+#community .community-card {
+  display: flex; flex-direction: column; align-items: center; gap: .6rem;
+  text-decoration: none; color: #fff;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px; padding: 1.1rem 1.4rem;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+#community .community-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.2);
+}
+#community .community-card strong { letter-spacing: .02em; font-weight: 700; }
+/* Community cards – bez rámečku a pozadí */
+#community .community-card{
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+  }
+  #community .community-card:hover{
+	background: rgba(255,255,255,.06);
+	border: 0;
+  }
