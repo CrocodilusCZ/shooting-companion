@@ -4331,9 +4331,36 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 
-	.actions.store-badges li { padding: 0 .6rem; }
-.actions.store-badges img { display: block; height: 60px; }
-.actions.store-badges a { background: transparent !important; padding: 0 !important; }
-@media (max-width: 736px) {
-  .actions.store-badges img { height: 50px; }
-}
+	/* Store badges – stabilní rozměry a zarovnání */
+.actions.store-badges { 
+	display: flex; 
+	gap: 1.2rem; 
+	align-items: center; 
+	justify-content: center; 
+  }
+  .actions.store-badges li { padding: 0; }
+  .actions.store-badges a { background: transparent !important; padding: 0 !important; box-shadow: none !important; }
+  .actions.store-badges img { display: block; height: 56px; width: auto; }
+  
+  /* menší výška na mobilech */
+  @media (max-width: 736px) {
+	.actions.store-badges img { height: 48px; }
+  }
+  
+  /* Launch badge nad tlačítky */
+  .launch-flag {
+	display: inline-block;
+	margin-bottom: .8rem;
+	padding: .4rem .8rem;
+	border-radius: 999px;
+	font-weight: 700;
+	letter-spacing: .06em;
+	color: #111;
+	background: linear-gradient(90deg,#ffd800,#ff9f1a);
+	box-shadow: 0 6px 20px rgba(255,168,0,.25);
+	animation: lf-pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes lf-pulse {
+	0%,100% { transform: translateZ(0) scale(1); }
+	50% { transform: translateZ(0) scale(1.03); }
+  }
