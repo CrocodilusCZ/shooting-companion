@@ -4330,3 +4330,10 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+	.actions.store-badges li { padding: 0 .6rem; }
+.actions.store-badges img { display: block; height: 60px; }
+.actions.store-badges a { background: transparent !important; padding: 0 !important; }
+@media (max-width: 736px) {
+  .actions.store-badges img { height: 50px; }
+}
